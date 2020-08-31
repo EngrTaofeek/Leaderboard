@@ -7,6 +7,7 @@
     android:background="@color/darkblack"
     tools:context=".SubmitActivity">
 
+    
     <include
         android:id="@+id/include"
         layout="@layout/submit_app_bar" />
@@ -111,14 +112,14 @@
         app:layout_constraintTop_toBottomOf="@+id/email_address" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/submit_button_act"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="70dp"
         android:background="@drawable/gold_button"
-        android:text="Button"
+        android:text="@string/submit_string"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
