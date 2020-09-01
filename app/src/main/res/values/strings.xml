@@ -23,4 +23,7 @@
     <string name="yes">Yes</string>
     <string name="submission_success">Submission Successful</string>
     <string name="submission_failed">Submission not Successful</string>
+    <string name="sample_name">Taofeek Oduola</string>
+    <string name="sample_skill_iq">300 skill IQ score,</string>
+    <string name="sample_learning_hours">400 learning hours,</string>
 </resources>
