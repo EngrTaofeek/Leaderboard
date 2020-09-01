@@ -21,4 +21,6 @@
     <string name="github_string">Project on GITHUB (link)</string>
     <string name="are_you_sure">Are you sure</string>
     <string name="yes">Yes</string>
+    <string name="submission_success">Submission Successful</string>
+    <string name="submission_failed">Submission not Successful</string>
 </resources>

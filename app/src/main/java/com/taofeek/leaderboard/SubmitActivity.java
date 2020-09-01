@@ -21,8 +21,9 @@ public class SubmitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_submit);
         toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        ActionBar actionbar = getSupportActionBar();
-        actionbar.setDisplayHomeAsUpEnabled(true);
+//        ActionBar actionbar = getSupportActionBar();
+//        actionbar.setDisplayHomeAsUpEnabled(true);
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         submit = findViewById(R.id.submit_button_act);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
