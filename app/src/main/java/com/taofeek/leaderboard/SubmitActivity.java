@@ -3,6 +3,7 @@ package com.taofeek.leaderboard;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.DialogFragment;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -35,15 +36,9 @@ public class SubmitActivity extends AppCompatActivity {
     }
 
     public void showConfirmationDialog() {
-        Dialog dialog = new Dialog(SubmitActivity.this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.confirmation_dialog);
-        Button button_yes = dialog.findViewById(R.id.button_yes);
-        button_yes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(SubmitActivity.this, "It is working guys",Toast.LENGTH_LONG);
-            }
-        });
+        DialogFragment newFragment = new ConfirmationFragment();
+        newFragment.show(getSupportFragmentManager(), "missiles");
     }
+
+
 }

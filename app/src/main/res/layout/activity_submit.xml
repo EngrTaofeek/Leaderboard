@@ -120,6 +120,7 @@
         android:background="@drawable/gold_button"
         android:text="@string/submit_string"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/github_link" />

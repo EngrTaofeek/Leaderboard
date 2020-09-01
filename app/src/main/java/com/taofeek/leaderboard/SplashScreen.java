@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 public class SplashScreen extends AppCompatActivity {
     private ImageView imageView;
-    private static int splashTimeOut = 5000;
+    private static int splashTimeOut = 2000;
 
 
     @Override
