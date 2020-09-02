@@ -1,4 +1,4 @@
-package com.taofeek.leaderboard;
+package com.taofeek.leaderboard.skill;
 
 import java.util.List;
 

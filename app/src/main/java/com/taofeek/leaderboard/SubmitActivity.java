@@ -6,15 +6,18 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class SubmitActivity extends AppCompatActivity {
     private Toolbar toolbar;
     Button submit;
+    ImageButton back_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +25,19 @@ public class SubmitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_submit);
         toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-//        ActionBar actionbar = getSupportActionBar();
-//        actionbar.setDisplayHomeAsUpEnabled(true);
-        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         submit = findViewById(R.id.submit_button_act);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showConfirmationDialog();
+            }
+        });
+        back_button = findViewById(R.id.back_button);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SubmitActivity.this,MainActivity.class);
+                startActivity(intent);
             }
         });
 

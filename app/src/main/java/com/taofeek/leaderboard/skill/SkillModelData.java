@@ -1,21 +1,20 @@
-package com.taofeek.leaderboard;
+package com.taofeek.leaderboard.skill;
 
 import com.google.gson.annotations.SerializedName;
 
-class LearningModelData {
+public class SkillModelData {
     @SerializedName("name")
     private String name;
-    @SerializedName("badgeUrl")
-    private String badgeUrl;
-    @SerializedName("hours")
-    private int hours;
+    @SerializedName("score")
+    private int score;
     @SerializedName("country")
     private String country;
+    @SerializedName("badgeUrl")
+    private String badgeUrl;
 
-
-    public LearningModelData(String name, int hours, String country, String badgeUrl) {
+    public SkillModelData(String name, int score, String country, String badgeUrl) {
         this.name = name;
-        this.hours = hours;
+        this.score = score;
         this.country = country;
         this.badgeUrl = badgeUrl;
     }
@@ -28,12 +27,12 @@ class LearningModelData {
         this.name = name;
     }
 
-    public int getHours() {
-        return hours;
+    public int getScore() {
+        return score;
     }
 
-    public void setHours(int hours) {
-        this.hours = hours;
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public String getCountry() {

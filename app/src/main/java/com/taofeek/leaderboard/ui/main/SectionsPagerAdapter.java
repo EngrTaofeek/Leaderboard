@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.taofeek.leaderboard.LearnersFragment;
+import com.taofeek.leaderboard.learner.LearnersFragment;
 import com.taofeek.leaderboard.R;
-import com.taofeek.leaderboard.SkillFragment;
+import com.taofeek.leaderboard.skill.SkillFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
