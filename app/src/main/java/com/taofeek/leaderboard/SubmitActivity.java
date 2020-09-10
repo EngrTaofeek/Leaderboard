@@ -9,6 +9,7 @@ import androidx.fragment.app.DialogFragment;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -36,6 +37,8 @@ public class SubmitActivity extends AppCompatActivity {
     private SubmitInterface mSubmitInterface;
     private static Retrofit retrofit;
     private static final String baseURl = "https://docs.google.com/forms/d/e/";
+    private AlertDialog mConfirmationDialog;
+    public String TAG = "submit_response";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,19 +67,19 @@ public class SubmitActivity extends AppCompatActivity {
                     LayoutInflater layoutInflater = SubmitActivity.this.getLayoutInflater();
                     View v = layoutInflater.inflate(R.layout.confirmation_dialog, null);
                     builder.setView(v);
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
+                    mConfirmationDialog = builder.create();
+                    mConfirmationDialog.show();
                     ImageView cancelImage =  v.findViewById(R.id.cancel_image);
                     cancelImage.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            dialog.dismiss();
+                            mConfirmationDialog.dismiss();
                         }
                     });
 
 
                     Button yesButton =  v.findViewById(R.id.button_yes);
-                    /*yesButton.setOnClickListener(new View.OnClickListener() {
+                    yesButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
 
@@ -87,7 +90,7 @@ public class SubmitActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
-                    });*/
+                    });
                 }
                 else {
                     Snackbar.make(findViewById(R.id.submit_parent), "Please fill all fields correctly", Snackbar.LENGTH_LONG).show();
@@ -123,22 +126,28 @@ public class SubmitActivity extends AppCompatActivity {
         stringCall.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
+
+
+                Log.i(TAG, "onResponse: " + response.code());
                 AlertDialog.Builder builder = new AlertDialog.Builder(SubmitActivity.this);
                 LayoutInflater layoutInflater = SubmitActivity.this.getLayoutInflater();
                 View v = layoutInflater.inflate(R.layout.success_dialog, null);
                 builder.setView(v);
                 AlertDialog dialog = builder.create();
                 dialog.show();
+                mConfirmationDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
+                Log.i(TAG, "onResponse: " + t.getMessage());
                 AlertDialog.Builder builder = new AlertDialog.Builder(SubmitActivity.this);
                 LayoutInflater layoutInflater = SubmitActivity.this.getLayoutInflater();
                 View v = layoutInflater.inflate(R.layout.failure_dialog, null);
                 builder.setView(v);
                 AlertDialog dialog = builder.create();
                 dialog.show();
+                mConfirmationDialog.dismiss();
 
             }
         });
